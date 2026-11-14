@@ -13,10 +13,10 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/itz-roshan/EstateIQ">GitHub Repository</a> •
+  <a href="https://github.com/ritesh975/EstateIQ-main">GitHub Repository</a> •
+  <a href="https://ritesh-estateiq-main.streamlit.app/">Live Demo</a> •
   <a href="#-features">Features</a> •
-  <a href="#-installation--setup">Installation</a> •
-  <a href="#-project-structure">Project Structure</a>
+  <a href="#-installation--setup">Installation</a>
 </p>
 
 ---
@@ -27,49 +27,47 @@
 
 The platform brings multiple AI-powered modules together in one interactive Streamlit application, covering property price estimation, property image classification, demand forecasting, and customer review sentiment analysis.
 
-Instead of relying only on traditional property information, EstateIQ explores how data-driven techniques can provide useful insights into the real estate market.
-
 ## ✨ Features
 
 | Module | Description | Technology |
 |---|---|---|
-| 🇺🇸 US Home Estimate | Estimates historical home prices using property features | Machine Learning |
-| 🇮🇳 India Property Estimate | Explores property prices using locality-based comparable listings and ANN | Python, ANN |
-| 🏠 Room Photo Checker | Classifies room images into different room categories | CNN, TensorFlow |
-| 📈 Demand Forecast | Forecasts future property demand using historical data | Time Series / Deep Learning |
-| 💬 Review Sentiment | Analyzes customer reviews and identifies sentiment | RNN, NLP |
-| 📊 Explore Datasets | Helps explore and understand datasets through interactive analysis | Pandas, Streamlit |
+| 🇺🇸 US Home Estimate | Estimates historical home prices | Machine Learning |
+| 🇮🇳 India Property Estimate | Locality-based property price estimation | Python, ANN |
+| 🏠 Room Photo Checker | Classifies room images | CNN, TensorFlow |
+| 📈 Demand Forecast | Forecasts property demand | Deep Learning |
+| 💬 Review Sentiment | Analyzes customer reviews | RNN, NLP |
+| 📊 Explore Datasets | Interactive dataset analysis | Pandas, Streamlit |
 
 ## 🧠 AI & Machine Learning Modules
 
 ### 1. 🇺🇸 US Home Price Estimation
 - Uses historical King County housing data.
 - Takes property-related features as input.
-- Applies a trained machine learning pipeline to estimate historical property prices.
+- Applies a trained machine learning pipeline.
 - Includes renovation-year handling and input validation.
 
 ### 2. 🇮🇳 India Property Intelligence
-- Explores property prices based on location and property characteristics.
+- Explores property prices based on location and characteristics.
 - Uses locality-level comparable listing information.
-- Provides indicative price references with confidence limitations.
+- Provides indicative price references.
 - Includes an ANN-based academic model.
 
 ### 3. 🏠 Property Image Classification
 - Uses a Convolutional Neural Network (CNN).
 - Analyzes uploaded room images.
 - Predicts room categories such as bedroom, living room, and dining room.
-- Includes uncertainty handling for low-confidence predictions.
+- Includes uncertainty handling.
 
 ### 4. 📈 Property Demand Forecasting
 - Explores historical demand patterns.
-- Applies forecasting techniques to understand possible future trends.
+- Applies forecasting techniques.
 - Presents results through visualizations.
 
 ### 5. 💬 Customer Review Sentiment Analysis
 - Uses Natural Language Processing (NLP).
 - Applies a Recurrent Neural Network (RNN).
 - Processes customer review text.
-- Classifies sentiment into relevant categories.
+- Classifies sentiment.
 
 ## 🛠️ Tech Stack
 
@@ -102,7 +100,7 @@ Instead of relying only on traditional property information, EstateIQ explores h
 ## 📂 Project Structure
 
 ```text
-EstateIQ/
+EstateIQ-main/
 │
 ├── .streamlit/
 │
@@ -128,8 +126,40 @@ EstateIQ/
 │
 ├── APP_REPAIR_REPORT.md
 ├── VALIDATION_REPORT.txt
+├── EstateIQ_Application_Movement_Architecture.png
 └── README.md
 ```
+
+## 🏗️ Application Movement Architecture
+
+This architecture represents the application's workflow, backend processing, database interaction, and application status movement.
+
+![Application Movement Architecture](EstateIQ_Application_Movement_Architecture.png)
+
+### 🔄 Application Lifecycle
+
+```mermaid
+flowchart TD
+    A[APPLIED] --> B[UNDER REVIEW]
+    B --> C[SHORTLISTED]
+    C --> D[INTERVIEW]
+    D --> E[OFFERED]
+    E --> F[HIRED]
+
+    B --> G[REJECTED]
+    D --> G
+```
+
+### Architecture Components
+
+- **Frontend:** React SPA deployed on Vercel.
+- **API Layer:** API Rewrite and Express API.
+- **Controllers:** Handle requests and application status updates.
+- **Services:** Manage business logic and workflow rules.
+- **MongoDB Models:** Manage application and candidate data.
+- **MongoDB:** Stores application records and status history.
+- **Upload System:** Multer and file validation.
+- **Socket.IO:** Supports real-time status updates.
 
 ## ⚙️ Installation & Setup
 
@@ -142,13 +172,13 @@ EstateIQ/
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/itz-roshan/EstateIQ.git
+git clone https://github.com/ritesh975/EstateIQ-main.git
 ```
 
 ### Step 2: Navigate to the Project Folder
 
 ```bash
-cd EstateIQ
+cd EstateIQ-main
 ```
 
 ### Step 3: Create a Virtual Environment
@@ -196,17 +226,17 @@ http://localhost:8501
 ## ⚠️ Important Notes
 
 - US Home Estimate uses historical King County housing data and should not be treated as a current market valuation.
-- India Property Estimate provides indicative comparable-based references. Its ANN model has limitations and should not be considered a reliable professional valuation tool.
-- Room Photo Checker is an academic image-classification model. Predictions may be uncertain.
+- India Property Estimate provides indicative comparable-based references.
+- Room Photo Checker is an academic image-classification model.
 - The Review Sentiment module requires its dataset. The large `Reviews.csv` file is not included in this GitHub repository due to its size.
-- Forecasting and prediction results depend on the available datasets and model performance.
+- Forecasting and prediction results depend on available datasets and model performance.
 
 **EstateIQ is an academic and demonstration project, not a professional property valuation or investment advisory service.**
 
 ## 🚀 Future Enhancements
 
 - Integration of live real estate market data.
-- Improved prediction accuracy with larger and better-quality datasets.
+- Improved prediction accuracy with larger datasets.
 - Interactive geographical property visualizations.
 - More advanced demand forecasting models.
 - Enhanced user experience and reporting features.
@@ -214,7 +244,7 @@ http://localhost:8501
 
 ## 👨‍💻 Developer
 
-**Roshan Kumar**
+**Ritesh Kumar Kasaudhan**
 
 Master of Computer Applications (MCA)  
 Invertis University, Bareilly, Uttar Pradesh
@@ -222,9 +252,14 @@ Invertis University, Bareilly, Uttar Pradesh
 Interested in Data Analytics, Machine Learning, Deep Learning, and AI-powered applications.
 
 <p align="center">
-  <a href="https://github.com/itz-roshan">
-    <img src="https://img.shields.io/badge/GitHub-itz--roshan-181717?style=for-the-badge&logo=github" />
+  <a href="https://github.com/ritesh975">
+    <img src="https://img.shields.io/badge/GitHub-ritesh975-181717?style=for-the-badge&logo=github" />
   </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/ritesh975/EstateIQ-main">📂 GitHub Repository</a> |
+  <a href="https://ritesh-estateiq-main.streamlit.app/">🚀 Live Demo</a>
 </p>
 
 ---
